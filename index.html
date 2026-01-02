@@ -14,6 +14,9 @@
                 <div class="logo">
                     <h1>🎬 HandbrakeAutomate</h1>
                 </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                    ☰
+                </button>
                 <ul class="nav-links">
                     <li><a href="#features">Features</a></li>
                     <li><a href="#getting-started">Getting Started</a></li>
@@ -178,5 +181,32 @@ pwsh ./src/Invoke-DvdRip.ps1 `
             </p>
         </div>
     </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuToggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuToggle.textContent = '☰';
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.navbar')) {
+                navLinks.classList.remove('active');
+                mobileMenuToggle.textContent = '☰';
+            }
+        });
+    </script>
 </body>
 </html>
