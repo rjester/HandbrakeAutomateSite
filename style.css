@@ -524,19 +524,19 @@ header {
 }
 
 @keyframes pulse {
-    0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.05); opacity: 0.9; }
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
 }
 
 /* Respect user's motion preferences */
 @media (prefers-reduced-motion: reduce) {
-    .cta::before,
-    .btn-primary::before,
-    .feature-card::before,
-    .nav-links a::after,
-    .footer a::after,
-    .section-title::after {
+    .cta::before {
         animation: none !important;
+    }
+    
+    .btn-primary::before,
+    .nav-links a::after,
+    .footer a::after {
         transition: none !important;
     }
     
