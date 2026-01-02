@@ -7,6 +7,7 @@
 
 :root {
     --primary-color: #ff6b35;
+    --primary-color-hover: #ff5722;
     --secondary-color: #004e89;
     --dark-bg: #1a1a2e;
     --light-bg: #f8f9fa;
@@ -93,7 +94,7 @@ header {
 }
 
 .btn-primary:hover {
-    background-color: #ff5722;
+    background-color: var(--primary-color-hover);
     transform: translateY(-2px);
     box-shadow: var(--box-shadow-hover);
 }
@@ -304,7 +305,7 @@ header {
 
 /* CTA Section */
 .cta {
-    background: linear-gradient(135deg, var(--primary-color) 0%, #ff5722 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color-hover) 100%);
     color: var(--white);
     padding: 5rem 0;
     text-align: center;
