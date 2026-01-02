@@ -512,20 +512,27 @@ header {
 }
 
 @keyframes pulse {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    50% { transform: translate(10%, 10%) scale(1.1); }
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.9; }
 }
 
 /* Respect user's motion preferences */
 @media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
+    .cta::before,
+    .btn-primary::before,
+    .feature-card::before,
+    .nav-links a::after,
+    .footer a::after,
+    .section-title::after {
+        animation: none !important;
+        transition: none !important;
     }
     
-    .cta::before {
-        animation: none;
+    .feature-card:hover,
+    .doc-card:hover,
+    .btn-primary:hover,
+    .btn-secondary:hover {
+        transform: none !important;
     }
 }
 
