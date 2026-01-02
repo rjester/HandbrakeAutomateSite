@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="HandbrakeAutomate - PowerShell scripts to automate DVD ripping with MakeMKV and HandBrake">
     <title>HandbrakeAutomate - Automated DVD Ripping Made Easy</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,10 +13,10 @@
         <nav class="navbar">
             <div class="container">
                 <div class="logo">
-                    <h1>🎬 HandbrakeAutomate</h1>
+                    <h1><i class="fas fa-film"></i> HandbrakeAutomate</h1>
                 </div>
                 <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
-                    ☰
+                    <i class="fas fa-bars"></i>
                 </button>
                 <ul class="nav-links">
                     <li><a href="#features">Features</a></li>
@@ -45,32 +46,32 @@
             <h2 class="section-title">Key Features</h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
+                    <div class="feature-icon"><i class="fas fa-bolt"></i></div>
                     <h3>Automated Workflow</h3>
                     <p>Complete automation from DVD extraction to encoded output with a single command</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🔧</div>
+                    <div class="feature-icon"><i class="fas fa-wrench"></i></div>
                     <h3>Auto-Detection</h3>
                     <p>Automatically detects MakeMKV and HandBrakeCLI tool paths on your system</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">📋</div>
+                    <div class="feature-icon"><i class="fas fa-sliders-h"></i></div>
                     <h3>Custom Presets</h3>
                     <p>Support for custom HandBrake presets with flexible configuration options</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">📊</div>
+                    <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
                     <h3>Progress Tracking</h3>
                     <p>Real-time progress tracking and detailed logging for all operations</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
+                    <div class="feature-icon"><i class="fas fa-bullseye"></i></div>
                     <h3>Title Selection</h3>
                     <p>Interactive title selection or automatic main title detection</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🧹</div>
+                    <div class="feature-icon"><i class="fas fa-broom"></i></div>
                     <h3>Smart Cleanup</h3>
                     <p>Automatic cleanup of temporary files with option to keep for debugging</p>
                 </div>
@@ -115,7 +116,7 @@ pwsh ./src/Invoke-DvdRip.ps1 `
             <h2 class="section-title">Documentation</h2>
             <div class="doc-grid">
                 <div class="doc-card">
-                    <h3>📘 Core Scripts</h3>
+                    <h3><i class="fas fa-book"></i> Core Scripts</h3>
                     <ul>
                         <li><strong>Invoke-DvdRip.ps1</strong> - Main orchestrator for the ripping and encoding process</li>
                         <li><strong>Invoke-MakeMKV.ps1</strong> - Handles MakeMKV operations (drive detection, title listing, ripping)</li>
@@ -125,7 +126,7 @@ pwsh ./src/Invoke-DvdRip.ps1 `
                     </ul>
                 </div>
                 <div class="doc-card">
-                    <h3>⚙️ Configuration</h3>
+                    <h3><i class="fas fa-cog"></i> Configuration</h3>
                     <p>The scripts support flexible configuration through:</p>
                     <ul>
                         <li>JSON configuration files for default settings</li>
@@ -135,7 +136,7 @@ pwsh ./src/Invoke-DvdRip.ps1 `
                     </ul>
                 </div>
                 <div class="doc-card">
-                    <h3>🔍 Workflow</h3>
+                    <h3><i class="fas fa-project-diagram"></i> Workflow</h3>
                     <ol>
                         <li>Insert DVD and run the script</li>
                         <li>Auto-detection of tools and DVD drive</li>
@@ -147,7 +148,7 @@ pwsh ./src/Invoke-DvdRip.ps1 `
                     </ol>
                 </div>
                 <div class="doc-card">
-                    <h3>💡 Advanced Options</h3>
+                    <h3><i class="fas fa-lightbulb"></i> Advanced Options</h3>
                     <ul>
                         <li><code>-KeepTemp</code> - Preserve temporary files for debugging</li>
                         <li><code>-TitleNumber</code> - Specify exact title to rip</li>
@@ -189,13 +190,13 @@ pwsh ./src/Invoke-DvdRip.ps1 `
         
         function closeMenu() {
             navLinks.classList.remove('active');
-            mobileMenuToggle.textContent = '☰';
+            mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
             mobileMenuToggle.setAttribute('aria-expanded', 'false');
         }
         
         function openMenu() {
             navLinks.classList.add('active');
-            mobileMenuToggle.textContent = '✕';
+            mobileMenuToggle.innerHTML = '<i class="fas fa-times"></i>';
             mobileMenuToggle.setAttribute('aria-expanded', 'true');
         }
         

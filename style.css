@@ -130,6 +130,11 @@ header {
     color: var(--white);
 }
 
+.logo h1 i {
+    margin-right: 0.5rem;
+    color: var(--primary-color);
+}
+
 .nav-links {
     display: flex;
     list-style: none;
@@ -359,6 +364,7 @@ header {
 .feature-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
+    color: var(--primary-color);
 }
 
 .feature-card h3 {
@@ -465,6 +471,11 @@ header {
     color: var(--secondary-color);
     margin-bottom: 1rem;
     font-size: 1.5rem;
+}
+
+.doc-card h3 i {
+    margin-right: 0.5rem;
+    color: var(--primary-color);
 }
 
 .doc-card ul, .doc-card ol {
