@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HandbrakeAutomate - PowerShell scripts to automate DVD ripping with MakeMKV and HandBrake">
+    <title>HandbrakeAutomate - Automated DVD Ripping Made Easy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1>🎬 HandbrakeAutomate</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#getting-started">Getting Started</a></li>
+                    <li><a href="#documentation">Documentation</a></li>
+                    <li><a href="https://github.com/rjester/HandbrakeAutomate" target="_blank" class="btn-primary">View on GitHub</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Automate Your DVD Ripping Workflow</h2>
+                <p class="hero-subtitle">PowerShell scripts that seamlessly integrate MakeMKV and HandBrake for efficient DVD ripping and encoding</p>
+                <div class="hero-buttons">
+                    <a href="https://github.com/rjester/HandbrakeAutomate" target="_blank" class="btn-large btn-primary">Get Started</a>
+                    <a href="#documentation" class="btn-large btn-secondary">Read Documentation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Automated Workflow</h3>
+                    <p>Complete automation from DVD extraction to encoded output with a single command</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Auto-Detection</h3>
+                    <p>Automatically detects MakeMKV and HandBrakeCLI tool paths on your system</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3>Custom Presets</h3>
+                    <p>Support for custom HandBrake presets with flexible configuration options</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Progress Tracking</h3>
+                    <p>Real-time progress tracking and detailed logging for all operations</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Title Selection</h3>
+                    <p>Interactive title selection or automatic main title detection</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧹</div>
+                    <h3>Smart Cleanup</h3>
+                    <p>Automatic cleanup of temporary files with option to keep for debugging</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="getting-started" class="getting-started">
+        <div class="container">
+            <h2 class="section-title">Getting Started</h2>
+            <div class="content-box">
+                <h3>Prerequisites</h3>
+                <ul class="checklist">
+                    <li>Windows machine with a DVD drive</li>
+                    <li>PowerShell 7+ installed</li>
+                    <li>MakeMKV installed</li>
+                    <li>HandBrakeCLI installed</li>
+                </ul>
+
+                <h3>Installation</h3>
+                <div class="code-block">
+                    <pre><code># Clone the repository
+git clone https://github.com/rjester/HandbrakeAutomate.git
+cd HandbrakeAutomate</code></pre>
+                </div>
+
+                <h3>Quick Start</h3>
+                <div class="code-block">
+                    <pre><code># Run the DVD ripping script
+pwsh ./src/Invoke-DvdRip.ps1 `
+    -OutputPath C:\Videos `
+    -PresetFile ./src/presets/DvdRip.json `
+    -PresetName "DvdRip Balanced" `
+    -OutputFormat mp4</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="documentation" class="documentation">
+        <div class="container">
+            <h2 class="section-title">Documentation</h2>
+            <div class="doc-grid">
+                <div class="doc-card">
+                    <h3>📘 Core Scripts</h3>
+                    <ul>
+                        <li><strong>Invoke-DvdRip.ps1</strong> - Main orchestrator for the ripping and encoding process</li>
+                        <li><strong>Invoke-MakeMKV.ps1</strong> - Handles MakeMKV operations (drive detection, title listing, ripping)</li>
+                        <li><strong>Invoke-HandBrakeEncode.ps1</strong> - Wraps HandBrakeCLI for encoding with progress tracking</li>
+                        <li><strong>Config.ps1</strong> - Configuration management and tool path detection</li>
+                        <li><strong>Logger.ps1</strong> - Logging functionality for debugging and auditing</li>
+                    </ul>
+                </div>
+                <div class="doc-card">
+                    <h3>⚙️ Configuration</h3>
+                    <p>The scripts support flexible configuration through:</p>
+                    <ul>
+                        <li>JSON configuration files for default settings</li>
+                        <li>Command-line parameters to override defaults</li>
+                        <li>Persistent tool path storage for convenience</li>
+                        <li>Custom HandBrake preset files</li>
+                    </ul>
+                </div>
+                <div class="doc-card">
+                    <h3>🔍 Workflow</h3>
+                    <ol>
+                        <li>Insert DVD and run the script</li>
+                        <li>Auto-detection of tools and DVD drive</li>
+                        <li>Title selection (interactive or automatic)</li>
+                        <li>MakeMKV extracts selected title(s)</li>
+                        <li>HandBrake encodes to desired format</li>
+                        <li>Automatic cleanup of temporary files</li>
+                        <li>Detailed logs for each operation</li>
+                    </ol>
+                </div>
+                <div class="doc-card">
+                    <h3>💡 Advanced Options</h3>
+                    <ul>
+                        <li><code>-KeepTemp</code> - Preserve temporary files for debugging</li>
+                        <li><code>-TitleNumber</code> - Specify exact title to rip</li>
+                        <li><code>-OutputFormat</code> - Choose between MP4 or MKV</li>
+                        <li><code>-Verbose</code> - Enable detailed output</li>
+                        <li>Custom preset configuration via JSON files</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Join the community and start automating your DVD ripping workflow today</p>
+            <div class="cta-buttons">
+                <a href="https://github.com/rjester/HandbrakeAutomate" target="_blank" class="btn-large btn-primary">View on GitHub</a>
+                <a href="https://github.com/rjester/HandbrakeAutomate/issues" target="_blank" class="btn-large btn-secondary">Report an Issue</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 HandbrakeAutomate. Open source project licensed under applicable terms.</p>
+            <p>
+                <a href="https://github.com/rjester/HandbrakeAutomate" target="_blank">GitHub</a> | 
+                <a href="https://github.com/rjester/HandbrakeAutomate/issues" target="_blank">Issues</a> | 
+                <a href="https://github.com/rjester/HandbrakeAutomate/blob/main/PROGRESS_ENHANCEMENTS.md" target="_blank">Roadmap</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
