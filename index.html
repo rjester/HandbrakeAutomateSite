@@ -14,7 +14,7 @@
                 <div class="logo">
                     <h1>🎬 HandbrakeAutomate</h1>
                 </div>
-                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
                     ☰
                 </button>
                 <ul class="nav-links">
@@ -187,24 +187,45 @@ pwsh ./src/Invoke-DvdRip.ps1 `
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
         const navLinks = document.querySelector('.nav-links');
         
+        function closeMenu() {
+            navLinks.classList.remove('active');
+            mobileMenuToggle.textContent = '☰';
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        }
+        
+        function openMenu() {
+            navLinks.classList.add('active');
+            mobileMenuToggle.textContent = '✕';
+            mobileMenuToggle.setAttribute('aria-expanded', 'true');
+        }
+        
         mobileMenuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuToggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+            if (navLinks.classList.contains('active')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
         });
         
         // Close menu when clicking on a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                mobileMenuToggle.textContent = '☰';
+                closeMenu();
             });
         });
         
         // Close menu when clicking outside
         document.addEventListener('click', (e) => {
-            if (!e.target.closest('.navbar')) {
-                navLinks.classList.remove('active');
-                mobileMenuToggle.textContent = '☰';
+            if (!e.target.closest('.navbar') && navLinks.classList.contains('active')) {
+                closeMenu();
+            }
+        });
+        
+        // Close menu with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                closeMenu();
+                mobileMenuToggle.focus();
             }
         });
     </script>
