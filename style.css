@@ -16,6 +16,7 @@
     --dark-bg-light: #252538;
     --light-bg: #f8f9fa;
     --light-bg-alt: #e9ecef;
+    --light-bg-stripe: #fcfcfc;
     --text-dark: #333;
     --text-light: #666;
     --text-muted: #999;
@@ -94,7 +95,7 @@ tbody tr:last-child td {
 
 /* Alternating row colors for better readability */
 tbody tr:nth-child(even) {
-    background-color: #fcfcfc;
+    background-color: var(--light-bg-stripe);
 }
 
 tbody tr:nth-child(even):hover {
