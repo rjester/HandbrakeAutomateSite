@@ -31,6 +31,21 @@
     --transition-fast: all 0.2s ease;
 }
 
+/* Dark mode color overrides */
+[data-theme="dark"] {
+    --light-bg: #1a1a2e;
+    --light-bg-alt: #252538;
+    --light-bg-stripe: #2a2a3e;
+    --text-dark: #e0e0e0;
+    --text-light: #b0b0b0;
+    --text-muted: #808080;
+    --white: #2d2d3d;
+    --border-color: #3a3a4a;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --box-shadow-hover: 0 8px 12px rgba(0, 0, 0, 0.4);
+    --box-shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -184,6 +199,25 @@ header {
 
 .mobile-menu-toggle:hover {
     color: var(--primary-color);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle:hover {
+    color: var(--primary-color);
+    transform: scale(1.1);
 }
 
 /* Buttons */
