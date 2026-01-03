@@ -1,0 +1,8 @@
+title: HandbrakeAutomate
+description: Automate DVD ripping and encoding using PowerShell, MakeMKV, and HandBrakeCLI
+url: https://rjester.github.io
+baseurl: /HandbrakeAutomateSite
+
+markdown: kramdown
+theme: null
+plugins: []

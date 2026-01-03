@@ -1,234 +1,151 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="HandbrakeAutomate - PowerShell scripts to automate DVD ripping with MakeMKV and HandBrake">
-    <title>HandbrakeAutomate - Automated DVD Ripping Made Easy</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <nav class="navbar">
-            <div class="container">
-                <div class="logo">
-                    <h1><i class="fas fa-film"></i> HandbrakeAutomate</h1>
-                </div>
-                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <ul class="nav-links">
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#getting-started">Getting Started</a></li>
-                    <li><a href="#documentation">Documentation</a></li>
-                    <li><a href="https://github.com/rjester/HandbrakeAutomate" target="_blank" class="btn-primary">View on GitHub</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+---
+layout: default
+title: HandbrakeAutomate
+---
 
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h2>Automate Your DVD Ripping Workflow</h2>
-                <p class="hero-subtitle">PowerShell scripts that seamlessly integrate MakeMKV and HandBrake for efficient DVD ripping and encoding</p>
-                <div class="hero-buttons">
-                    <a href="https://github.com/rjester/HandbrakeAutomate" target="_blank" class="btn-large btn-primary">Get Started</a>
-                    <a href="#documentation" class="btn-large btn-secondary">Read Documentation</a>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Navigation -->
+<header class="sticky top-0 z-50 bg-slate-950/80 dark:bg-slate-950/80 light:bg-white/80 backdrop-blur border-b border-slate-800 dark:border-slate-800 light:border-slate-200">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <h1 class="text-xl font-semibold">HandbrakeAutomate</h1>
+    <nav class="space-x-6 text-sm text-slate-300 dark:text-slate-300 light:text-slate-700">
+      <a href="#features" class="hover:text-white">Features</a>
+      <a href="#workflow" class="hover:text-white">Workflow</a>
+      <a href="#docs" class="hover:text-white">Docs</a>
+      <a href="#get-started" class="hover:text-white">Get Started</a>
+    </nav>
+    <button id="theme-toggle" class="ml-6 p-2 rounded-lg border border-slate-700 dark:border-slate-700 light:border-slate-300 hover:bg-slate-800 dark:hover:bg-slate-800 light:hover:bg-slate-100" aria-label="Toggle dark mode">
+      <span id="theme-icon">🌙</span>
+    </button>
+  </div>
+</header>
 
-    <section id="features" class="features">
-        <div class="container">
-            <h2 class="section-title">Key Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-bolt"></i></div>
-                    <h3>Automated Workflow</h3>
-                    <p>Complete automation from DVD extraction to encoded output with a single command</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-wrench"></i></div>
-                    <h3>Auto-Detection</h3>
-                    <p>Automatically detects MakeMKV and HandBrakeCLI tool paths on your system</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-sliders-h"></i></div>
-                    <h3>Custom Presets</h3>
-                    <p>Support for custom HandBrake presets with flexible configuration options</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
-                    <h3>Progress Tracking</h3>
-                    <p>Real-time progress tracking and detailed logging for all operations</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-bullseye"></i></div>
-                    <h3>Title Selection</h3>
-                    <p>Interactive title selection or automatic main title detection</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-broom"></i></div>
-                    <h3>Smart Cleanup</h3>
-                    <p>Automatic cleanup of temporary files with option to keep for debugging</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Hero -->
+<section class="relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <h2 class="text-4xl md:text-5xl font-bold leading-tight">Automate DVD Ripping & Encoding</h2>
+      <p class="mt-6 text-lg text-slate-300">A PowerShell-driven workflow that automates MakeMKV extraction and HandBrakeCLI encoding with smart defaults and full control.</p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="#get-started" class="px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 font-medium">Get Started</a>
+        <a href="https://github.com/rjester/HandbrakeAutomate" class="px-6 py-3 rounded-xl border border-slate-700 hover:bg-slate-800">View on GitHub</a>
+      </div>
+    </div>
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 text-sm text-slate-300">
+      <pre><code>Invoke-DvdRip \
+  -OutputPath "D:\\Videos" \
+  -Preset "HQ 1080p30" \
+  -Format MP4</code></pre>
+    </div>
+  </div>
+</section>
 
-    <section id="getting-started" class="getting-started">
-        <div class="container">
-            <h2 class="section-title">Getting Started</h2>
-            <div class="content-box">
-                <h3>Prerequisites</h3>
-                <ul class="checklist">
-                    <li>Windows machine with a DVD drive</li>
-                    <li>PowerShell 7+ installed</li>
-                    <li>MakeMKV installed</li>
-                    <li>HandBrakeCLI installed</li>
-                </ul>
+<!-- Features -->
+<section id="features" class="py-24 bg-slate-900/50">
+  <div class="max-w-7xl mx-auto px-6">
+    <h3 class="text-3xl font-semibold">Key Features</h3>
+    <div class="mt-12 grid md:grid-cols-3 gap-8">
+      <div class="p-6 rounded-2xl bg-slate-950 border border-slate-800">
+        <h4 class="font-semibold">End‑to‑End Automation</h4>
+        <p class="mt-2 text-slate-400">Rip, encode, clean up, and log with a single command.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-slate-950 border border-slate-800">
+        <h4 class="font-semibold">Smart Detection</h4>
+        <p class="mt-2 text-slate-400">Automatically locates MakeMKV, HandBrakeCLI, and DVD drives.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-slate-950 border border-slate-800">
+        <h4 class="font-semibold">Custom Presets</h4>
+        <p class="mt-2 text-slate-400">Use HandBrake presets or your own JSON-based configuration.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-slate-950 border border-slate-800">
+        <h4 class="font-semibold">Interactive or Automatic</h4>
+        <p class="mt-2 text-slate-400">Choose titles manually or let the script decide.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-slate-950 border border-slate-800">
+        <h4 class="font-semibold">Progress & Logging</h4>
+        <p class="mt-2 text-slate-400">Real-time feedback and detailed logs for troubleshooting.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-slate-950 border border-slate-800">
+        <h4 class="font-semibold">Clean by Default</h4>
+        <p class="mt-2 text-slate-400">Temporary files are removed unless you choose to keep them.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-                <h3>Installation</h3>
-                <div class="code-block">
-                    <pre><code># Clone the repository
-git clone https://github.com/rjester/HandbrakeAutomate.git
-cd HandbrakeAutomate</code></pre>
-                </div>
+<!-- Workflow -->
+<section id="workflow" class="py-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <h3 class="text-3xl font-semibold">How It Works</h3>
+    <ol class="mt-12 grid md:grid-cols-7 gap-6 text-sm">
+      <li class="p-4 rounded-xl bg-slate-900 border border-slate-800">Insert DVD</li>
+      <li class="p-4 rounded-xl bg-slate-900 border border-slate-800">Detect Tools</li>
+      <li class="p-4 rounded-xl bg-slate-900 border border-slate-800">Select Title</li>
+      <li class="p-4 rounded-xl bg-slate-900 border border-slate-800">MakeMKV Rip</li>
+      <li class="p-4 rounded-xl bg-slate-900 border border-slate-800">HandBrake Encode</li>
+      <li class="p-4 rounded-xl bg-slate-900 border border-slate-800">Cleanup</li>
+      <li class="p-4 rounded-xl bg-slate-900 border border-slate-800">Logs Saved</li>
+    </ol>
+  </div>
+</section>
 
-                <h3>Quick Start</h3>
-                <div class="code-block">
-                    <pre><code># Run the DVD ripping script
-pwsh ./src/Invoke-DvdRip.ps1 `
-    -OutputPath C:\Videos `
-    -PresetFile ./src/presets/DvdRip.json `
-    -PresetName "DvdRip Balanced" `
-    -OutputFormat mp4</code></pre>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Documentation -->
+<section id="docs" class="py-24 bg-slate-900/50">
+  <div class="max-w-7xl mx-auto px-6">
+    <h3 class="text-3xl font-semibold">Core Scripts</h3>
+    <div class="mt-10 grid md:grid-cols-2 gap-8 text-sm">
+      <ul class="space-y-3">
+        <li><strong>Invoke-DvdRip.ps1</strong> – Orchestrates the entire workflow</li>
+        <li><strong>Invoke-MakeMKV.ps1</strong> – Disc detection and ripping</li>
+        <li><strong>Invoke-HandBrakeEncode.ps1</strong> – Encoding and progress parsing</li>
+      </ul>
+      <ul class="space-y-3">
+        <li><strong>Config.ps1</strong> – Tool paths and configuration</li>
+        <li><strong>Logger.ps1</strong> – Structured logging</li>
+        <li><strong>Presets</strong> – JSON-based encoding definitions</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-    <section id="documentation" class="documentation">
-        <div class="container">
-            <h2 class="section-title">Documentation</h2>
-            <div class="doc-grid">
-                <div class="doc-card">
-                    <h3><i class="fas fa-book"></i> Core Scripts</h3>
-                    <ul>
-                        <li><strong>Invoke-DvdRip.ps1</strong> - Main orchestrator for the ripping and encoding process</li>
-                        <li><strong>Invoke-MakeMKV.ps1</strong> - Handles MakeMKV operations (drive detection, title listing, ripping)</li>
-                        <li><strong>Invoke-HandBrakeEncode.ps1</strong> - Wraps HandBrakeCLI for encoding with progress tracking</li>
-                        <li><strong>Config.ps1</strong> - Configuration management and tool path detection</li>
-                        <li><strong>Logger.ps1</strong> - Logging functionality for debugging and auditing</li>
-                    </ul>
-                </div>
-                <div class="doc-card">
-                    <h3><i class="fas fa-cog"></i> Configuration</h3>
-                    <p>The scripts support flexible configuration through:</p>
-                    <ul>
-                        <li>JSON configuration files for default settings</li>
-                        <li>Command-line parameters to override defaults</li>
-                        <li>Persistent tool path storage for convenience</li>
-                        <li>Custom HandBrake preset files</li>
-                    </ul>
-                </div>
-                <div class="doc-card">
-                    <h3><i class="fas fa-project-diagram"></i> Workflow</h3>
-                    <ol>
-                        <li>Insert DVD and run the script</li>
-                        <li>Auto-detection of tools and DVD drive</li>
-                        <li>Title selection (interactive or automatic)</li>
-                        <li>MakeMKV extracts selected title(s)</li>
-                        <li>HandBrake encodes to desired format</li>
-                        <li>Automatic cleanup of temporary files</li>
-                        <li>Detailed logs for each operation</li>
-                    </ol>
-                </div>
-                <div class="doc-card">
-                    <h3><i class="fas fa-lightbulb"></i> Advanced Options</h3>
-                    <ul>
-                        <li><code>-KeepTemp</code> - Preserve temporary files for debugging</li>
-                        <li><code>-TitleNumber</code> - Specify exact title to rip</li>
-                        <li><code>-OutputFormat</code> - Choose between MP4 or MKV</li>
-                        <li><code>-Verbose</code> - Enable detailed output</li>
-                        <li>Custom preset configuration via JSON files</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Get Started -->
+<section id="get-started" class="py-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="rounded-3xl bg-gradient-to-br from-indigo-600 to-purple-600 p-12">
+      <h3 class="text-3xl font-bold">Get Started in Minutes</h3>
+      <p class="mt-4 max-w-2xl">Clone the repository, install the prerequisites, and automate your DVD workflow with a single PowerShell command.</p>
+      <a href="https://github.com/rjester/HandbrakeAutomate" class="inline-block mt-8 px-6 py-3 rounded-xl bg-black/30 hover:bg-black/40 font-medium">Open GitHub Repository</a>
+    </div>
+  </div>
+</section>
 
-    <section class="cta">
-        <div class="container">
-            <h2>Ready to Get Started?</h2>
-            <p>Join the community and start automating your DVD ripping workflow today</p>
-            <div class="cta-buttons">
-                <a href="https://github.com/rjester/HandbrakeAutomate" target="_blank" class="btn-large btn-primary">View on GitHub</a>
-                <a href="https://github.com/rjester/HandbrakeAutomate/issues" target="_blank" class="btn-large btn-secondary">Report an Issue</a>
-            </div>
-        </div>
-    </section>
+<!-- Footer -->
+<footer class="border-t border-slate-800 py-8 text-center text-sm text-slate-400">
+  © {{ site.time | date: '%Y' }} HandbrakeAutomate · Open Source
+</footer>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 HandbrakeAutomate. Open source project licensed under applicable terms.</p>
-            <p>
-                <a href="https://github.com/rjester/HandbrakeAutomate" target="_blank">GitHub</a> | 
-                <a href="https://github.com/rjester/HandbrakeAutomate/issues" target="_blank">Issues</a> | 
-                <a href="https://github.com/rjester/HandbrakeAutomate/blob/main/PROGRESS_ENHANCEMENTS.md" target="_blank">Roadmap</a>
-            </p>
-        </div>
-    </footer>
+<script>
+  const toggle = document.getElementById('theme-toggle');
+  const icon = document.getElementById('theme-icon');
+  const root = document.documentElement;
 
-    <script>
-        // Mobile menu toggle
-        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        
-        function closeMenu() {
-            navLinks.classList.remove('active');
-            mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-            mobileMenuToggle.setAttribute('aria-expanded', 'false');
-        }
-        
-        function openMenu() {
-            navLinks.classList.add('active');
-            mobileMenuToggle.innerHTML = '<i class="fas fa-times"></i>';
-            mobileMenuToggle.setAttribute('aria-expanded', 'true');
-        }
-        
-        mobileMenuToggle.addEventListener('click', () => {
-            if (navLinks.classList.contains('active')) {
-                closeMenu();
-            } else {
-                openMenu();
-            }
-        });
-        
-        // Close menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                closeMenu();
-            });
-        });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.navbar') && navLinks.classList.contains('active')) {
-                closeMenu();
-            }
-        });
-        
-        // Close menu with Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && navLinks.classList.contains('active')) {
-                closeMenu();
-                mobileMenuToggle.focus();
-            }
-        });
-    </script>
-</body>
-</html>
+  function setTheme(theme) {
+    if (theme === 'light') {
+      root.classList.remove('dark');
+      root.classList.add('light');
+      icon.textContent = '☀️';
+    } else {
+      root.classList.remove('light');
+      root.classList.add('dark');
+      icon.textContent = '🌙';
+    }
+    localStorage.setItem('theme', theme);
+  }
+
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  setTheme(savedTheme);
+
+  toggle.addEventListener('click', () => {
+    const current = root.classList.contains('dark') ? 'dark' : 'light';
+    setTheme(current === 'dark' ? 'light' : 'dark');
+  });
+</script>
